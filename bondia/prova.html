@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<?php
+include("dades.php");
+?>
+<script>
+
+window.addEventListener('load',()=>{
+
+var boton=document.querySelector("#miau");
+
+function changeColor(){
+
+	if(boton.style.background=="blue"){
+		boton.style.background="red";
+	}else if(boton.style.background=="red"){
+		boton.style.background="blue";
+	}else{
+		boton.style.background="blue";
+	}
+}
+
+var fruits = ["apple", "orange", "cherry"];
+
+fruits.forEach(function (item, index){
+
+ document.getElementById("demo").innerHTML += index + ":" + item + "<br>"; 
+
+});
+
+miau.addEventListener('click', function(){
+
+ changeColor();
+
+});
+
+});
+
+
+
+</script>
+<body>
+
+<button id="miau">Hola</button>
+<p>List all array items, with keys and values:</p>
+
+<p id="demo"></p>
+
+
+</body>
+</html>
