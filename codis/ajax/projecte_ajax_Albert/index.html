@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Colorlib">
+    <meta name="description" content="#">
+    <meta name="keywords" content="#">
+    <!-- Page Title -->
+    <title>Projecteeeee</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,900" rel="stylesheet">
+    <!-- Simple line Icon -->
+    <link rel="stylesheet" href="css/simple-line-icons.css">
+    <!-- Themify Icon -->
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <!-- Hover Effects -->
+    <link rel="stylesheet" href="css/set1.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="projecte.js"></script>
+</head>
+
+<body>
+    <!--============================= HEADER =============================-->
+    <div class="nav-menu">
+        <div class="bg transition">
+            <div class="container-fluid fixed">
+                <div class="row">
+                    <div class="col-md-12">
+                        <nav class="navbar navbar-expand-lg navbar-light">
+                            <a class="navbar-brand" href="index.html">Listing</a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="icon-menu"></span>
+                            </button>
+                            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                           Explore
+                                           <span class="icon-arrow-down"></span>
+                                       </a>
+                                       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link" href="#" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Listing
+                                        <span class="icon-arrow-down"></span>
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Pages
+                                        <span class="icon-arrow-down"></span>
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="#">About</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Blog</a>
+                                </li>
+                                <li><a href="#" class="btn btn-outline-light top-btn"><span class="ti-plus"></span> Add Listing</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- SLIDER -->
+<section class="slider d-flex align-items-center">
+    <!-- <img src="images/slider.jpg" class="img-fluid" alt="#"> -->
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-12">
+                <div class="slider-title_box">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="slider-content_wrap">
+                                <h1>Discover great places in Mataró</h1>
+                                <h5>Let's uncover the best places to eat, drink, and shop nearest to you.</h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-md-10">
+                            <form class="form-wrap mt-4">
+                                <div class="btn-group" role="group" aria-label="Basic example">
+                                    <input type="text" id="busc" placeholder="What are your looking for?" class="btn-group1">
+                                    <input type="text" placeholder="Mataró" class="btn-group2">
+                                    <button type="button" onclick="buscaCoincidencias(document.getElementById('busc').value);" class="btn-form"><span class="icon-magnifier search-icon"></span>SEARCH<i class="pe-7s-angle-right"></i></button>
+                                </div>
+                            </form>
+                            <div class="slider-link">
+                                <a href="#">Browse Popular</a><span>or</span> <a href="#">Recently Addred</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--// SLIDER -->
+<!--//END HEADER -->
+
+<!--============================= FEATURED PLACES =============================-->
+<section style="display:none;" id="restaurants" class="main-block light-bg">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <div class="styled-heading">
+                    <h3>Featured Places</h3>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 featured-responsive">
+                <div class="featured-place-wrap">
+                    <a href="detail.html">
+                        <img src="" width="400" height="291" class="img-fluid" id="imatge" alt="#">
+                        <span class="featured-rating-green" id="puntuacio"></span>
+                        <div class="featured-title-box">
+                            <h6 id="nom"></h6>
+                            <p id="tipus"></p> <span>• </span>
+                            <p id="reviews"></p> <span> • </span>
+                            <p id="pDolar"></p>
+                            <ul>
+                                <li><span class="icon-location-pin"></span>
+                                    <p id="dire"></p>
+                                </li>
+                                <li><span class="icon-screen-smartphone"></span>
+                                    <p id="num"></p>
+                                </li>
+                                <li><span class="icon-link"></span>
+                                    <p id="web"></p>
+                                </li>
+
+                            </ul>
+                            <div class="bottom-icons">
+                                <div class="open-now" id="estat"></div>
+                                <span class="ti-heart"></span>
+                                <span class="ti-bookmark"></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 featured-responsive">
+                <div class="featured-place-wrap">
+                    <a href="detail.html">
+                        <img src="" width="400" height="291" class="img-fluid" id="imatge2" alt="#">
+                        <span class="featured-rating-green" id="puntuacio2"></span>
+                        <div class="featured-title-box">
+                            <h6 id="nom2"></h6>
+                            <p id="tipus2"></p> <span>• </span>
+                            <p id="reviews2"></p> <span> • </span>
+                            <p id="pDolar2"></p>
+                            <ul>
+                                <li><span class="icon-location-pin"></span>
+                                    <p id="dire2"></p>
+                                </li>
+                                <li><span class="icon-screen-smartphone"></span>
+                                    <p id="num2"></p>
+                                </li>
+                                <li><span class="icon-link"></span>
+                                    <p id="web2"></p>
+                                </li>
+
+                            </ul>
+                            <div class="bottom-icons">
+                                <div class="open-now" id="estat2"></div>
+                                <span class="ti-heart"></span>
+                                <span class="ti-bookmark"></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 featured-responsive">
+                <div class="featured-place-wrap">
+                    <a href="detail.html">
+                        <img src="" width="400" height="291" class="img-fluid" id="imatge3" alt="#">
+                        <span class="featured-rating-green" id="puntuacio3"></span>
+                        <div class="featured-title-box">
+                            <h6 id="nom3"></h6>
+                            <p id="tipus3"></p> <span>• </span>
+                            <p id="reviews3"></p> <span> • </span>
+                            <p id="pDolar3"></p>
+                            <ul>
+                                <li><span class="icon-location-pin"></span>
+                                    <p id="dire3"></p>
+                                </li>
+                                <li><span class="icon-screen-smartphone"></span>
+                                    <p id="num3"></p>
+                                </li>
+                                <li><span class="icon-link"></span>
+                                    <p id="web3"></p>
+                                </li>
+
+                            </ul>
+                            <div class="bottom-icons">
+                                <div class="closed-now" id="estat3"></div>
+                                <span class="ti-heart"></span>
+                                <span class="ti-bookmark"></span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--//END FEATURED PLACES -->
+
+<!--============================= ADD LISTING =============================-->
+<section class="main-block light-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="add-listing-wrap">
+                    <h2>Reach millions of People</h2>
+                    <p>Add your Business infront of millions and earn 3x profits from our listing</p>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="featured-btn-wrap">
+                    <a href="#" class="btn btn-danger"><span class="ti-plus"></span> ADD LISTING</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--//END ADD LISTING -->
+<!--============================= FOOTER =============================-->
+<footer class="main-block dark-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="copyright">
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    <p>Copyright &copy; 2018 Listing. All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    <ul>
+                        <li><a href="#"><span class="ti-facebook"></span></a></li>
+                        <li><a href="#"><span class="ti-twitter-alt"></span></a></li>
+                        <li><a href="#"><span class="ti-instagram"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!--//END FOOTER -->
+
+
+
+
+<!-- jQuery, Bootstrap JS. -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<script>
+    function buscaCoincidencias(str){
+        var xhttp;
+        if(str.length==0){
+            return;
+        }
+        xhttp=new XMLHttpRequest();
+        xhttp.onreadystatechange=function(){
+            if(this.readyState==4 && this.status==200){
+                if(this.responseText=="japones"){
+                   peticion(this.responseText);
+                }else if(this.responseText=="italia"){
+                    peticion(this.responseText);
+                }else if(this.responseText=="tradicional"){
+                    peticion(this.responseText);
+                }else if(this.responseText=="altres"){
+                    peticion(this.responseText);
+                }
+                else if(this.responseText=="error"){
+                    alert("No en tenim d'aixó! :(");
+                }
+
+            }
+
+        };
+        xhttp.open("GET","dades.php?q="+str,true);
+        xhttp.send();
+    }
+
+
+    function peticion(miau) {
+        var xhttp2 = new XMLHttpRequest();
+        xhttp2.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                    if(miau=="japones"){
+                    elXML(this);
+                    }else if(miau=="altres"){
+                    elTxt(this);
+                    }else if(miau=="italia"){
+                    elJson(this);
+                    }  
+                }      
+        };
+
+            if(miau=="japones"){
+                xhttp2.open("GET","dades.xml",true);
+                }else if(miau=="altres"){
+                xhttp2.open("GET","dades.txt",true); 
+                }else if(miau=="italia"){
+                xhttp2.open("GET","dades.json",true);  
+                }   
+            xhttp2.send();
+    }
+
+   
+    function elTxt(entrada) {
+    var restaurants=entrada.responseText.split("\n");
+        for(i=0;i<restaurants.length;i++){
+                var seccio=restaurants[i].split("_");
+                for(j=0;j<seccio.length;j++){
+                    if(j==0){
+                        if(i==0){
+                        document.getElementById("puntuacio").innerHTML=seccio[j];
+                        }else if(i==1){document.getElementById("puntuacio2").innerHTML=seccio[j];
+                        }else if(i==2){ document.getElementById("puntuacio3").innerHTML=seccio[j];
+                    }}else if(j==1){
+                        if(i==0){
+                        document.getElementById("nom").innerHTML=seccio[j];
+                        }else if(i==1){document.getElementById("nom2").innerHTML=seccio[j];
+                        }else if(i==2){ document.getElementById("nom3").innerHTML=seccio[j];
+                    }}else if(j==2){
+                        if(i==0){
+                        document.getElementById("tipus").innerHTML=seccio[j];
+                        }else if(i==1){document.getElementById("tipus2").innerHTML=seccio[j];
+                        }else if(i==2){ document.getElementById("tipus3").innerHTML=seccio[j];
+                    }}else if(j==3){
+                        if(i==0){
+                        document.getElementById("reviews").innerHTML=seccio[j];
+                        }else if(i==1){document.getElementById("reviews2").innerHTML=seccio[j];
+                        }else if(i==2){ document.getElementById("reviews3").innerHTML=seccio[j];
+                    }}else if(j==4){
+                        if(i==0){
+                        document.getElementById("pDolar").innerHTML=seccio[j];
+                        }else if(i==1){document.getElementById("pDolar2").innerHTML=seccio[j];
+                        }else if(i==2){ document.getElementById("pDolar3").innerHTML=seccio[j];
+                    }}else if(j==6){
+                        if(i==0){
+                        document.getElementById("dire").innerHTML=seccio[j];
+                        }else if(i==1){document.getElementById("dire2").innerHTML=seccio[j];
+                        }else if(i==2){ document.getElementById("dire3").innerHTML=seccio[j];
+                    }}else if(j==7){
+                        if(i==0){
+                        document.getElementById("num").innerHTML=seccio[j];
+                        }else if(i==1){document.getElementById("num2").innerHTML=seccio[j];
+                        }else if(i==2){ document.getElementById("num3").innerHTML=seccio[j];
+                    }}else if(j==8){
+                        if(i==0){
+                        document.getElementById("web").innerHTML=seccio[j];
+                        }else if(i==1){document.getElementById("web2").innerHTML=seccio[j];
+                        }else if(i==2){ document.getElementById("web3").innerHTML=seccio[j];
+                    }}else if(j==9){
+                        if(i==0){
+                        document.getElementById("estat").innerHTML=seccio[j];
+                        }else if(i==1){document.getElementById("estat2").innerHTML=seccio[j];
+                        }else if(i==2){ document.getElementById("estat3").innerHTML=seccio[j];
+                    }}else if(j==10){
+                        if(i==0){
+                        document.getElementById("imatge").src=seccio[j];
+                        }else if(i==1){document.getElementById("imatge2").src=seccio[j];
+                        }else if(i==2){ document.getElementById("imatge3").src=seccio[j];}
+                    }
+                }
+            }
+
+            document.getElementById("restaurants").style.display="block";
+       
+    }
+
+     function elXML(entrada) {
+        var restaurants=entrada.responseXML.getElementsByTagName("restaurant");
+           // numNodes=(restaurants[0].childNodes.length-1)/2;
+        
+        document.getElementById("puntuacio").innerHTML=restaurants[0].childNodes[1].childNodes[0].nodeValue;
+         document.getElementById("puntuacio2").innerHTML=restaurants[1].childNodes[1].childNodes[0].nodeValue;
+         document.getElementById("puntuacio3").innerHTML=restaurants[2].childNodes[1].childNodes[0].nodeValue;
+
+        document.getElementById("nom").innerHTML=restaurants[0].childNodes[3].childNodes[0].nodeValue;
+         document.getElementById("nom2").innerHTML=restaurants[1].childNodes[3].childNodes[0].nodeValue;
+         document.getElementById("nom3").innerHTML=restaurants[2].childNodes[3].childNodes[0].nodeValue;
+
+         document.getElementById("tipus").innerHTML=restaurants[0].childNodes[5].childNodes[0].nodeValue;
+         document.getElementById("tipus2").innerHTML=restaurants[1].childNodes[5].childNodes[0].nodeValue;
+         document.getElementById("tipus3").innerHTML=restaurants[2].childNodes[5].childNodes[0].nodeValue;
+         document.getElementById("reviews").innerHTML=restaurants[0].childNodes[7].childNodes[0].nodeValue;
+         document.getElementById("reviews2").innerHTML=restaurants[1].childNodes[7].childNodes[0].nodeValue;
+         document.getElementById("reviews3").innerHTML=restaurants[2].childNodes[7].childNodes[0].nodeValue;
+        document.getElementById("pDolar").innerHTML=restaurants[0].childNodes[9].childNodes[0].nodeValue;
+         document.getElementById("pDolar2").innerHTML=restaurants[1].childNodes[9].childNodes[0].nodeValue;
+         document.getElementById("pDolar3").innerHTML=restaurants[2].childNodes[9].childNodes[0].nodeValue;
+        document.getElementById("dire").innerHTML=restaurants[0].childNodes[11].childNodes[0].nodeValue;
+         document.getElementById("dire2").innerHTML=restaurants[1].childNodes[11].childNodes[0].nodeValue;
+         document.getElementById("dire3").innerHTML=restaurants[2].childNodes[11].childNodes[0].nodeValue;
+           document.getElementById("num").innerHTML=restaurants[0].childNodes[13].childNodes[0].nodeValue;
+         document.getElementById("num2").innerHTML=restaurants[1].childNodes[13].childNodes[0].nodeValue;
+         document.getElementById("num3").innerHTML=restaurants[2].childNodes[13].childNodes[0].nodeValue;
+         document.getElementById("web").innerHTML=restaurants[0].childNodes[15].childNodes[0].nodeValue;
+         document.getElementById("web2").innerHTML=restaurants[1].childNodes[15].childNodes[0].nodeValue;
+         document.getElementById("web3").innerHTML=restaurants[2].childNodes[15].childNodes[0].nodeValue;
+         document.getElementById("estat").innerHTML=restaurants[0].childNodes[17].childNodes[0].nodeValue;
+         document.getElementById("estat2").innerHTML=restaurants[1].childNodes[17].childNodes[0].nodeValue;
+         document.getElementById("estat3").innerHTML=restaurants[2].childNodes[17].childNodes[0].nodeValue;
+        document.getElementById("imatge").src=restaurants[0].childNodes[19].childNodes[0].nodeValue;
+         document.getElementById("imatge2").src=restaurants[1].childNodes[19].childNodes[0].nodeValue;
+        document.getElementById("imatge3").src=restaurants[2].childNodes[19].childNodes[0].nodeValue;
+        
+
+        document.getElementById("restaurants").style.display="block";
+
+       
+    }
+
+     function elJson(entrada) {
+
+        var restaurant=eval("("+entrada.responseText+")");
+
+        document.getElementById("puntuacio").innerHTML=restaurant[0].puntuacio;
+        document.getElementById("puntuacio2").innerHTML=restaurant[1].puntuacio;
+        document.getElementById("puntuacio3").innerHTML=restaurant[2].puntuacio;
+
+        document.getElementById("nom").innerHTML=restaurant[0].nom;
+        document.getElementById("nom2").innerHTML=restaurant[1].nom;
+        document.getElementById("nom3").innerHTML=restaurant[2].nom;
+
+        document.getElementById("tipus").innerHTML=restaurant[0].tipo;
+        document.getElementById("tipus2").innerHTML=restaurant[1].tipo;
+        document.getElementById("tipus3").innerHTML=restaurant[2].tipo;
+
+        document.getElementById("reviews").innerHTML=restaurant[0].reviews;
+        document.getElementById("reviews2").innerHTML=restaurant[1].reviews;
+        document.getElementById("reviews3").innerHTML=restaurant[2].reviews;
+
+        document.getElementById("pDolar").innerHTML=restaurant[0].preu;
+        document.getElementById("pDolar2").innerHTML=restaurant[1].preu;
+        document.getElementById("pDolar3").innerHTML=restaurant[2].preu;
+        document.getElementById("dire").innerHTML=restaurant[0].dire;
+        document.getElementById("dire2").innerHTML=restaurant[1].dire;
+        document.getElementById("dire3").innerHTML=restaurant[2].dire;
+        document.getElementById("num").innerHTML=restaurant[0].numero;
+        document.getElementById("num2").innerHTML=restaurant[1].numero;
+        document.getElementById("num3").innerHTML=restaurant[2].numero;
+        document.getElementById("web").innerHTML=restaurant[0].web;
+        document.getElementById("web2").innerHTML=restaurant[1].web;
+        document.getElementById("web3").innerHTML=restaurant[2].web;
+        document.getElementById("estat").innerHTML=restaurant[0].estat;
+        document.getElementById("estat2").innerHTML=restaurant[1].estat;
+        document.getElementById("estat3").innerHTML=restaurant[2].estat;
+        document.getElementById("imatge").src=restaurant[0].imatge;
+        document.getElementById("imatge2").src=restaurant[1].imatge;
+        document.getElementById("imatge3").src=restaurant[2].imatge;
+        document.getElementById("restaurants").style.display="block";
+    }
+
+    function elBBDD() {
+
+      
+    }
+
+     $(window).scroll(function() {
+            // 100 = The point you would like to fade the nav in.
+
+            if ($(window).scrollTop() > 100) {
+
+                $('.fixed').addClass('is-sticky');
+
+            } else {
+
+                $('.fixed').removeClass('is-sticky');
+
+            };
+        });
+
+</script>
+
+
+</body>
+
+</html>
+

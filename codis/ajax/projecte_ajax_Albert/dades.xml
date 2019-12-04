@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<restaurants12>	
+<restaurant>
+	<puntuacio>9</puntuacio>
+	<nom>Romo</nom>
+	<tipo>Restaurant</tipo>
+	<reviews>160 reviews</reviews>
+	<preu>$$$</preu>
+	<dire>Carrer Nou, 20, 08301 Mataró, Barcelona</dire>
+	<numero> 681 16 97 00</numero>
+	<web>https://romosushispot.com</web>
+	<estat>Obert</estat>
+	<imatge>images/romo.jpg</imatge>
+</restaurant>
+
+<restaurant>
+	<puntuacio>8</puntuacio>
+	<nom>Yami</nom>
+	<tipo>Restaurant</tipo>
+	<reviews>266 reviews </reviews>
+	<preu>$$</preu>
+	<dire>Camí Ral de la Mercè, 08302 Mataró</dire>
+	<numero>937 58 60 31</numero>
+	<web>https://restaurant-yami.negocio.site/
+	</web>
+	<estat>Obert</estat>
+	<imatge>images/yami.jpg</imatge>
+</restaurant>
+
+<restaurant>
+	<puntuacio>9.2</puntuacio>
+	<nom>Sisquet</nom>
+	<tipo>Restaurant</tipo>
+	<reviews>112 reviews</reviews>
+	<preu>$</preu>
+	<dire>Carrer de Cuba, 60, 08302 Mataró</dire>
+	<numero>688 17 04 38</numero>
+	<web>www.sisquetBarMataro</web>
+	<estat>Tancat</estat>
+	<imatge>images/sisquet.jpg</imatge>
+</restaurant>
+
+</restaurants12>	
+
+
+
+

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="js/validacion.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<title>Document</title>
+	<script></script>
+
+</head>
+<body>
+	<main>
+		<!-- Cabecera -->
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3" id="contForm">
+					<div class=row>
+						<div class="col-md-12" id="logo"><img src="img/logo.png" alt="logo"/></div>
+					</div>
+					<div class="row">
+						<div class="col-md-12" id="mensaje"><p>Por favor, rellene los campos siguientes:</p></div>
+					</div>
+					<!-- Form -->
+					<div class="row">
+						<form class="form-inline" id="miForm" name="miForm" method="post">
+							<div class="row">
+								<div class="col-md-6">
+									<input type="nombre" name="nombre" id="nombre" placeholder="Nombre" class="margenIz"/>
+									<p id="nombre2"></p>
+								</div>
+								<div class="col-md-6">
+									<input type="apellido" id="apellido" name="apellido" placeholder="Apellido" class="margenDer"/>
+									<p id="apellido2"></p>
+								</div>	
+							</div>
+							<div class="row">
+								<div class="col-md-6 ">
+									<input type="email" name="email" id="email" placeholder="Email" class="margenIz"/>
+									<p id="email2"></p>
+								</div>
+								<div class="col-md-6">
+									<input type="rEmail" id="rEmail" name="rEmail" placeholder="Repetir Email" class="margenDer"/>
+									<p id="rEmail2"></p>
+								</div>	
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<input type="dni" name="dni" id="dni" placeholder="DNI" class="margenIz"/>
+									<p id="dni2"></p>
+								</div>
+								<div class="col-md-6">
+									<input type="movil" name="movil" id="movil" placeholder="Móvil" class="margenDer"/>
+									<p id="movil2"></p>
+								</div>	
+							</div>
+							<div class="row">
+								<div class="col-md-12">
+								<input class="btn btn-primary" name="envi" id="envi" type="button" value="Enviar" onclick="enviar();"/> 
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+
+	<footer><div id="respuesta"></div></footer>
+
+
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

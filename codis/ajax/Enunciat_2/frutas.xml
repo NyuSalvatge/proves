@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frutas>
+   <fruta>
+      <nombre>cereza</nombre>
+	  <precio>12</precio>
+	  <procedencia>bcn</procedencia>
+	  <cantidad>12</cantidad>
+   </fruta>
+   <fruta>
+      <nombre>naranja</nombre>
+	  <precio>2</precio>
+	  <procedencia>bcn</procedencia>
+	  <cantidad>12</cantidad>
+   </fruta>
+   <fruta>
+      <nombre>plátano</nombre>
+	  <precio>14</precio>
+	  <procedencia>bcn</procedencia>
+	  <cantidad>12</cantidad>
+   </fruta>
+</frutas>

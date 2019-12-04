@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Libros</title>
+	<script src="exemple1.js"></script>
+	<script>
+		//cargar el documento XML
+		var xmlDoc=cargaDocXML("exemple1.xml");
+		//obtener el array con todos los nodos secundarios
+		// var nodos=xmlDoc.getElementsByTagName("libro")[0].childNodes;
+		var salida="";
+		var nodos=xmlDoc.getElementsByTagName("libro");
+		var x=nodos.length;
+		
+
+		for(j=0;j<x;j++){
+			nodos=xmlDoc.getElementsByTagName("libro")[j].childNodes;
+			
+
+		for(i=0;i<nodos.length;i++){ //tipo element(tag)
+			if(nodos[i].nodeType==1){
+				var nombre=nodos[i].nodeName;//nombre de la etiqueta
+				valor=nodos[i].childNodes[0].nodeValue;
+				salida+="<p>"+nombre+":"+valor+"</p>";
+			}
+		}
+	}
+		window.onload=function(){document.getElementById("milibro").innerHTML=salida;}
+	</script>
+</head>
+<body>
+	<h1>Libros</h1>
+	<div id="milibro"></div>
+</body>
+</html>

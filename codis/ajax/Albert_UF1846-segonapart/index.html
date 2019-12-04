@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+</head>
+<style>
+	td{text-align: center;}
+
+</style>
+<body onload="peticion('jSon')">
+	<h1 onclick="peticion('XML')">Menús</h1>
+	<table style="background-color: purple; color:white;"id="demo2"></table>
+	<h1>Datos</h1>
+
+	<table id="demo"></table>
+
+	<script>
+		function peticion(cosa) {
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					if(cosa=="XML"){
+						miFuncion(this);
+					}else if(cosa=="jSon"){
+						miFuncion2(this);
+					}
+				}
+			};
+			if(cosa=="XML"){
+				xhttp.open("GET", "comidas.xml", true);
+
+			}else if(cosa=="jSon"){
+				xhttp.open("GET", "datosPersona.json", true);
+			}
+			xhttp.send();
+
+		}
+
+		function peticion2() {
+			var xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					miFuncion2(this);
+      //procesa la respuesta
+  }
+};
+xhttp.open("GET","ejemploTxt2.txt",true);
+xhttp.send();
+}
+
+
+
+function miFuncion(objetoRequest) {
+	var i;
+	var respuestaXml = objetoRequest.responseXML;
+	var tabla="<tr style='color: blue;'><th>Nombre</th><th>Precio</th><th>Descripcion</th></tr>";
+	var x = respuestaXml.getElementsByTagName("comida");
+	for (i = 0; i <x.length; i++) { 
+		tabla += "<tr><td>" +
+		x[i].getElementsByTagName("nombre")[0].childNodes[0].nodeValue +
+		"</td><td>" +
+		x[i].getElementsByTagName("precio")[0].childNodes[0].nodeValue +
+		"</td><td>"+
+		x[i].getElementsByTagName("descripcion")[0].childNodes[0].nodeValue +
+		"</td></tr>";
+	}
+	document.getElementById("demo2").innerHTML = tabla;
+}
+
+function miFuncion2(objetoRequest) {
+
+	var dades=eval("("+objetoRequest.responseText+")");
+	
+	for(i=0;i<dades.length;i++){
+		if(dades[i].direccion=="Barcelona"){
+			document.getElementById("demo").innerHTML+="<p>Nombre "+dades[i].nombre+" , "+"Apellido: "+dades[i].apellido+"</p>";
+		}
+
+	}
+	
+}
+
+
+</script>
+</body>
+</html

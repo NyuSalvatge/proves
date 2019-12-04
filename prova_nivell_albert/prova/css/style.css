@@ -1,0 +1,54 @@
+body {
+  font: 100% Arial, sans-serif;
+  font-size: 150%;
+  color: #8c8c8c;
+  background-color: #e6e6e6;
+}
+body main {
+  margin-top: 5%;
+  text-align: center;
+}
+body #contForm {
+  background-color: white;
+}
+body #mensaje {
+  margin-top: 1%;
+}
+body form {
+  margin-top: 2%;
+}
+body #logo img {
+  width: 15%;
+  height: 5%;
+}
+body input {
+  width: 100%;
+  margin: 3% 0%;
+  padding-bottom: 4%;
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: #a6a6a6;
+}
+body input#envi {
+  width: 40%;
+  background-color: #006;
+  margin-bottom: 2%;
+}
+@media (min-width: 992px) {
+  body .col-md-6 .margenIz {
+    margin-left: 5%;
+    width: 90%;
+  }
+  body .col-md-6 .margenDer {
+    margin-right: 5%;
+    width: 90%;
+  }
+}
+body #tablaR {
+  margin-bottom: 2%;
+  
+}
+body #tablaR td {
+  width:15%;
+  padding: 1%;
+}

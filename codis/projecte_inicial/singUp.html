@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/codi.js"></script>
+	<title>Home</title>
+</head>
+
+<body>
+	<div class="container-fluid">
+  	<div class="row">
+    	<div class="col-sm-12">
+      	<form id="registre" role="form" class="form-horizontal" name="miForm" method="post">
+        	<div id="cos">
+         	 <h1>Registre</h1>
+        	<div class="form-group">
+             	<label class="control-label col-sm-2" style="margin-top:20px;" for="nom">Nom:</label>
+              	<div style="margin-top:20px;" class="col-sm-9">
+             	<input type="text" name="nom" class="form-control" id="nom" placeholder="ej:Albert" onkeyup="compr_nom();" />
+             	<p id="nom2"></p>
+           	</div>
+        	</div>
+        	<div class="form-group">
+          	<label class="control-label col-sm-2" for="cog">Cognom:</label>
+           	<div class="col-sm-9">
+           	<input type="text" name="cog" class="form-control" id="cog" placeholder="ej:Viader" onkeyup="compr_cog()"/>
+           	<p id="cog2"></p>
+          	</div>
+       	 	</div>
+        	<div class="form-group">
+             	<label class="control-label col-sm-2" for="usr">Usuari:</label>
+              	<div class="col-sm-9">
+             	<input type="text" name="usr" class="form-control" id="usr" placeholder="ej:Nyu_Salvatge" onkeyup="compr_usr();" />
+             	<p id="usr2"></p>
+           	</div>
+          	</div>
+          	<div class="form-group">
+              	<label class="control-label col-sm-2" for="pwd">Password:</label>
+              	<div class="col-sm-9">
+              	<input type="password" name="pwd" class="form-control" id="pwd" placeholder="Introduir contrasenya" onkeyup="compr_psw();"/><input type="checkbox" onchange="document.getElementById('pwd').type = this.checked ? 'text' : 'password'"> Ver Contraseña
+              	<p id="pwd2"></p>
+            	</div>
+          	</div>
+          	<div class="form-group">
+              	<label class="control-label col-sm-2" for="rPwd">Confirmar Password:</label>
+              	<div class="col-sm-9">
+              	<input type="password" name="rPwd"  class="form-control" id="rPwd" placeholder="Repir la contrasenya" onkeyup="compr_psw2();"/>
+              	<p id="rPwd2"></p>
+            	</div>
+          	</div>
+          	<div class="form-group">
+              	<label class="control-label col-sm-2" for="mail">Mail:</label>
+              	<div class="col-sm-9">
+              	<input type="text" name="mail" class="form-control" id="mail" placeholder="ej:ejemplo@dominio.com" onkeyup="compr_mail();" />
+              	<p id="mail2"></p>
+            	</div>
+          	</div>
+          	<div class="form-group">        
+            	<div class="checkbox">
+              	<div class="col-sm-offset-2 col-sm-10">
+              	<label><input type="checkbox" name="chk" onchange="document.getElementById('envi').disabled=this.checked?false:true;"> Aceptas venderme tu alma?</label>
+            	</div>
+         	 </div>
+       	 	</div>
+          	<div class="form-group">
+            	<div class="col-sm-offset-2 col-sm-10">      
+            	<input style="margin-bottom:20px;" class="btn btn-primary" name="envi" id="envi" type="button" value="Enviar"  disabled onclick="enviar();" /> 
+          	</div>
+        	</div>  
+      	</div>
+      	</form>
+    	</div>
+  	</div>
+	</div>   
+
+<script>
+
+  var nomExp=/^([A-ZÀÁÌÍÒÓÉÈÚÙ]{1}[a-zñáéíóúçàèò]+[\s]*)+$/
+  var mailExp=/^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,3})$/;
+  var usrExp=/^[a-zA-Z\d_]{3,15}$/;
+  var pswExp=/(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/;
+
+  function compr_usr(){
+    var u = document.miForm.usr.value;
+    var resUsr=usrExp.test(u);
+    if(resUsr || document.miForm.usr.value=="" ){
+      document.miForm.usr.style.borderColor="";
+      document.getElementById("usr2").innerHTML="";
+    }else{
+      document.miForm.usr.style.borderColor="red";
+      document.getElementById("usr2").style.color="red";
+      document.getElementById("usr2").innerHTML="El nom d'usuari ha de contenir entre 3 i 15 caràcters :<";
+    }
+  }
+
+ function compr_nom(){
+    var n = document.miForm.nom.value;
+    var resNom=nomExp.test(n);
+    if(resNom || document.miForm.nom.value=="" ){
+      document.miForm.nom.style.borderColor="";
+      document.getElementById("nom2").innerHTML="";
+    }else{
+      document.miForm.nom.style.borderColor="red";
+      document.getElementById("nom2").style.color="red";
+      document.getElementById("nom2").innerHTML="Ha de començar en majúscula i no pot contenir números :(";
+    }
+  }
+
+ function compr_cog(){
+    var c = document.miForm.cog.value;
+    var resCog=nomExp.test(c);
+    if(resCog || document.miForm.cog.value=="" ){
+      document.miForm.cog.style.borderColor="";
+      document.getElementById("cog2").innerHTML="";
+    }else{
+      document.miForm.cog.style.borderColor="red";
+      document.getElementById("cog2").style.color="red";
+      document.getElementById("cog2").innerHTML="Ha de començar en majúscula i no pot contenir números :(";
+    }
+  }
+
+    function compr_psw(){
+      var p = document.miForm.pwd.value;
+      var resPas=pswExp.test(p);
+      if(resPas || document.miForm.pwd.value=="" ){
+        document.miForm.pwd.style.borderColor="";
+        document.getElementById("pwd2").innerHTML="";
+      }else{
+        document.miForm.pwd.style.borderColor="red";
+        document.getElementById("pwd2").style.color="red";
+        document.getElementById("pwd2").innerHTML="Contrasenya mínim de 8 caràcters i ha de contenir una majúscula y un número o caràcter especial :<";
+      }
+    }
+
+    function compr_psw2(){
+      var p2 = document.miForm.rPwd.value;
+      var resPas2=pswExp.test(p2);
+      if(resPas2 || document.miForm.rPwd.value=="" ){
+        document.miForm.rPwd.style.borderColor="";
+        document.getElementById("rPwd2").innerHTML="";
+      }else{
+        document.miForm.rPwd.style.borderColor="red";
+        document.getElementById("rPwd2").style.color="red";
+        document.getElementById("rPwd2").innerHTML="Contrasenya mínim de 8 caràcters i ha de contenir una majúscula y un número o caràcter especial :<";
+      }
+    }
+
+    function compr_mail(){
+    var m = document.miForm.mail.value;
+    var resMail=mailExp.test(m);
+    if(resMail || document.miForm.mail.value=="" ){
+      document.miForm.mail.style.borderColor="";
+      document.getElementById("mail2").innerHTML="";
+    }else{
+      document.miForm.mail.style.borderColor="red";
+      document.getElementById("mail2").style.color="red";
+      document.getElementById("mail2").innerHTML="Posa un mail correcte carinyo :<";
+    }
+  }
+
+   
+  function enviar(){
+    var n = document.miForm.nom.value;
+    var c = document.miForm.cog.value;
+    var m = document.miForm.mail.value;
+    var u = document.miForm.usr.value;
+    var p = document.miForm.pwd.value;
+    var rP = document.miForm.rPwd.value; 
+
+    var resNom=nomExp.test(n);
+    var resCog=nomExp.test(c);
+    var resMail=mailExp.test(m);
+    var resUsr=usrExp.test(u);
+    var resPsw=pswExp.test(p);
+    var resRpsw=pswExp.test(rP);
+
+    if(resNom && resCog && resMail & resUsr && resPsw && resRpsw && document.miForm.email.value==document.miForm.rEmail.value){
+       x=confirm("Quieres registrarte con estos datos?");
+       if(x){
+        document.miForm.submit();
+       }else{
+        alert("Cambia lo que desees");
+       } 
+    }else{
+      if(resNom){
+      document.miForm.nombre.style.borderColor="";
+      document.getElementById("nombre2").innerHTML="";
+      }else{
+      document.miForm.nombre.style.borderColor="red";
+      document.getElementById("nombre2").style.color="red";
+      document.getElementById("nombre2").innerHTML="Ha de començar en majúscula i no pot contenir números :(";
+      }
+
+      if(resCog){
+      document.miForm.apellido.style.borderColor="";
+      document.getElementById("apellido2").innerHTML="";
+      }else{
+      document.miForm.apellido.style.borderColor="red";
+      document.getElementById("apellido2").style.color="red";
+      document.getElementById("apellido2").innerHTML="Ha de començar en majúscula i no pot contenir números :(";
+      }
+       if(resUsr){
+      document.miForm.usr.style.borderColor="";
+      document.getElementById("usr2").innerHTML="";
+      }else{
+      document.miForm.usr.style.borderColor="red";
+      document.getElementById("usr2").style.color="red";
+      document.getElementById("usr2").innerHTML="El nom d'usuari ha de contenir entre 3 i 15 caràcters :<";
+      }
+
+      if(resPsw){
+        document.miForm.pwd.style.borderColor="";
+        document.getElementById("pwd2").innerHTML="";
+      }else{
+        document.miForm.pwd.style.borderColor="red";
+        document.getElementById("pwd2").style.color="red";
+        document.getElementById("pwd2").innerHTML="Contrasenya mínim de 8 caràcters i ha de contenir una majúscula y un número o caràcter especial :<";
+      }
+
+       if(resRpsw){
+        document.miForm.rPwd.style.borderColor="";
+        document.getElementById("rPwd2").innerHTML="";
+      }else{
+        document.miForm.rPwd.style.borderColor="red";
+        document.getElementById("rPwd2").style.color="red";
+        document.getElementById("rPwd2").innerHTML="Contrasenya mínim de 8 caràcters i ha de contenir una majúscula y un número o caràcter especial :<";
+      }
+
+       if(resMail){
+      document.miForm.mail.style.borderColor="";
+      document.getElementById("mail2").innerHTML="";
+      }else{
+        document.miForm.mail.style.borderColor="red";
+        document.getElementById("mail2").style.color="red";
+        document.getElementById("mail2").innerHTML="Posa un mail correcte carinyo :<";
+      }  
+      if(document.miForm.rPwd.value!=document.miForm.pwd.value){
+        document.miForm.pwd.style.borderColor="red";
+        document.getElementById("pwd2").style.color="red";
+        document.getElementById("pwd2").innerHTML="Les contrasenyes no coincideixen D:";
+        document.miForm.rPwd.style.borderColor="red";
+        document.getElementById("rPwd2").style.color="red";
+        document.getElementById("rPwd2").innerHTML="Les contrasenyes no coincideixen D:";
+      }else{     
+        document.miForm.pwd.style.borderColor="";
+        document.getElementById("pwd2").style.color="";
+        document.getElementById("pwd2").innerHTML="";
+        document.miForm.rPwd.style.borderColor="";
+        document.getElementById("rPwd2").style.color="";
+        document.getElementById("rPwd2").innerHTML="";
+      }
+    }
+
+  }
+  
+
+  
+
+
+  // function cmpr_nom(){
+
+  // }
+
+  // function cmpr_cog(){
+  
+  // }
+
+  // function cmpr_usr(){
+  
+  // }
+
+  // function cmpr_psw(){
+  
+  // }
+
+  // function cmpr_psw2(){
+  
+  // }
+  
+  // function cmpr_mail(){
+    
+  // }
+
+
+
+
+
+
+
+
+</script>
+
+	
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

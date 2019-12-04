@@ -1,0 +1,21 @@
+
+<!Doctype html>   
+<html lang="es">  <!-- donar estil a la sortida, al div... -->
+<head><title> textorotando  </title>
+<meta charset="utf-8">
+</head>
+<body>
+
+<div id="cuentavisitas"></div>
+ <script>yu=function(id){return document.getElementById(id);}
+ if(localStorage){
+ if(localStorage['visitas']==undefined){
+ localStorage['visitas']=0;
+ }var n=parseInt(localStorage['visitas']);localStorage['visitas']=1+n;
+ var num=localStorage['visitas'];
+
+ var mensaje="Hasta ahora has visitado mi pagina " + num + " Veces !";
+
+ yu('cuentavisitas').innerHTML=mensaje;}</script>
+</body>
+</html>

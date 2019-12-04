@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+	<style>
+	img#pj{
+		position:absolute;
+		top:510px;
+		left:300px;
+		width:150px;
+		height:150px;
+	}
+
+	body{
+		background-image:url("img/bg.gif");
+		background-repeat: no-repeat;
+		background-attachment:fixed;
+		background-position:center center;
+	 	background-size:cover;
+
+	}
+	h1{
+		text-align:center;
+	}
+	
+
+	</style>
+	<script>
+    
+	function myFunction() {
+   	var pos= document.getElementById("pj");
+   	var tecla = event.key;
+    var x=pos.offsetLeft;
+    var y=pos.offsetTop;
+
+    
+
+   		if(tecla=="a"||tecla=="ArrowLeft"){
+   			x=x-5;
+   			pos.style.left=x+'px';	
+   		}else if(tecla=="d"||tecla=="ArrowRight"){
+   			x=x+5;
+   			pos.style.left=x+'px';	
+   		}
+   		else if(tecla==" "){
+   		var nova = document.createElement("IMG");
+    	nova.setAttribute("src", "img/ice.png");
+    	nova.setAttribute("width", "20");
+    	nova.setAttribute("height", "20");
+    	nova.setAttribute("alt", "Ice");
+    	nova.style.position="absolute";
+    	nova.style.left=x+'px';
+    	nova.style.top=y+'px';
+    	document.body.appendChild(nova);
+      var k=49;
+    	var hola=setInterval(function(){ 
+    		y=y-20;
+    		nova.style.top=y+'px';
+        alert(lista[1].style.top);
+      
+        alert("Hola"+nova.style.top);
+    		if(y<10){
+    			window.clearInterval(hola);
+    			nova.remove();   			
+    		}
+    		}, 30);
+    	}
+    }
+
+
+	</script>
+
+</head>
+<body onkeydown="myFunction();">
+
+	<h1 id="puntuacio">Score:</h1>
+
+	<img src="img/Lucina.png" id="pj" alt="lucina">
+  <div style="position:absolute; right:0px; bottom:0px; "><a href="index.html"><img src="arrow.png" alt="arrow" width="100px" height="100px"></a></div>
+
+<script>   
+  var creats=false; 
+    if(creats==false){
+      for(i=1;i<49;i++) {
+        var moguri = document.createElement("IMG");
+        moguri.setAttribute("src", "img/moguri.png");
+        moguri.setAttribute("width", "55");
+        moguri.setAttribute("height", "55");
+        moguri.setAttribute("alt", "Ice");
+        moguri.style.position="relative";
+        document.body.appendChild(moguri);
+        }
+        var lista=document.getElementsByTagName("IMG");
+      }
+      creats=true;
+      var altura=0;
+      
+      setInterval(function(){
+      for(i=1;i<49;i++){
+      lista[i].style.top=(altura+50)+'px';   
+      }
+      altura+=50;    
+      }, 2000);
+
+      setInterval(function(){
+        alert(nova.style.top);
+        for(i=1;i<k;i++){
+          for(j=1;i<k;j++){
+            if(nova.style.top+20>=llista[i].style.top<=nova.style.top-20){
+            lista[i].remove();
+            window.clearInterval(miau);
+            alert("Bingo!");
+            k--;
+            }
+          }
+        }
+      }, 500);
+      
+</script>
+  <script src="js/jquery.js"></script>
+  <script src="js/boostrap.min.js"></script>
+</body>
+</html>
+
+
+

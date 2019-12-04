@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+
+	<h1>Sugerencias de nombres</h1>
+	<form action="">
+		Nom1: <input type="text" id="txt1" 
+		onkeyup="buscaCoincidencias(this.value,document.getElementById('txt2').value);">
+
+		Nom2: <input type="text" id="txt2" onkeyup="buscaCoincidencias(this.value,document.getElementById('txt1').value);">
+	</form>
+	<p>Raiz: <span id="texto"></span></p>
+
+	<script>
+		function buscaCoincidencias(str,str2){
+			var xhttp;
+			if(str.length==0 || str2.length==0){
+				document.getElementById("texto").innerHTML="";
+				return;
+			}
+			xhttp=new XMLHttpRequest();
+			xhttp.onreadystatechange=function(){
+
+				if(this.readyState==4 && this.status==200){
+					document.getElementById("texto").innerHTML=this.responseText;
+				}
+			};
+			xhttp.open("GET","numeros.php?q="+str+"&b="+str2,true);
+			xhttp.send();
+		}
+
+	</script>
+	
+</body>
+</html>

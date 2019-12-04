@@ -1,0 +1,38 @@
+<menu_almuerzo>
+    <comida>
+        <nombre>Waffles</nombre>
+        <precio>2.00</precio>
+        <descripcion>Waffles baratos de McDonalds</descripcion>
+        <calorias>650</calorias>
+    </comida>
+    <comida>
+        <nombre>Hamburguesa</nombre>
+        <precio>5.00</precio>
+        <descripcion>La hamburguesa  de McDonalds</descripcion>
+        <calorias>1500</calorias>
+    </comida> 
+    <comida>
+        <nombre>Hamburguesa completa</nombre>
+        <precio>5.00</precio>
+        <descripcion>La hamburguesa  de McDonalds</descripcion>
+        <calorias>1500</calorias>
+    </comida> 
+     <comida>
+        <nombre>Ensalada</nombre>
+        <precio>3.50</precio>
+        <descripcion>La ensalada de McDonalds</descripcion>
+        <calorias>100</calorias>
+    </comida>  
+     <comida>
+        <nombre>Ensalada tropical</nombre>
+        <precio>4.50</precio>
+        <descripcion>La ensalada de McDonalds</descripcion>
+        <calorias>100</calorias>
+    </comida> 
+     <comida>
+        <nombre>Sandy</nombre>
+        <precio>2.00</precio>
+        <descripcion>El postre de McDonalds</descripcion>
+        <calorias>200</calorias>
+    </comida>     
+</menu_almuerzo> 

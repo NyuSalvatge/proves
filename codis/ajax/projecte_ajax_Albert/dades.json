@@ -1,0 +1,45 @@
+[
+
+
+{
+"puntuacio":"8.6",
+"nom":"La pentola",
+"tipo":"Restaurant",
+"reviews":"510 reviews",
+"preu":"$$",
+"dire":"Carrer d'En Pujol, 27, 08301 Mataró",
+"numero":" 937 90 26 10",
+"web":"www.ristorantelapentolamataro.com/",
+"estat":"Obert",
+"imatge":"images/laPentola.jpg"
+
+},
+
+{
+"puntuacio":"8.6",
+"nom":"Caminetto",
+"tipo":"Restaurant",
+"reviews":"541 reviews",
+"preu":"$$",
+"dire":"Camí Ral de la Mercè, 407, 08301 Mataró",
+"numero":"937 96 14 28",
+"web":"http://www.rte-caminetto.com/",
+"estat":"Obert",
+"imatge":"images/caminetto.jpg"
+
+},
+
+{
+"puntuacio":"10",
+"nom":"La Pizanna",
+"tipo":"Restaurant",
+"reviews":"12 reviews",
+"preu":"$$",
+"dire":"Fray Luis de León, 13, 08302 Mataró",
+"numero":"937 57 03 03",
+"web":"www.pizzana.com/",
+"estat":"Tancat",
+"imatge":"images/pizana.jpg"
+}
+
+]

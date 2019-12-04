@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script>
+		function datos(str){
+			if(str==""){
+				document.getElementById('texto').innerHTML="";
+				return;
+			}else{
+				if(window.XMLHttpRequest){
+					xmlhttp=new XMLHttpRequest(); //IE7, safari, opera, chrome
+				}else{xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");}
+				xmlhttp.onreadystatechange=function(){
+					if(this.readyState==4 && this.status==200){
+						document.getElementById("texto").innerHTML=this.responseText;
+					}
+				};
+				xmlhttp.open("GET","clientes.php?m="+str,true);
+				xmlhttp.send();
+			}
+		}
+
+	</script>
+</head>
+<body>
+	<form>
+		<select name="" id="" onchange="datos(this.value);">
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+
+		</select>
+	</form>
+	<div id="texto">...</div>
+</body>
+</html>

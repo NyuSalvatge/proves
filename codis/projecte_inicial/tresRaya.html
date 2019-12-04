@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<style>
+
+	h1{
+		font-weight:bold;
+		text-align:center;
+	}
+
+	p{
+		font-weight:bold;
+		font-size:25px;
+		text-align:center;
+	}
+	table{
+		margin:50px 0px;
+		width:100%;
+	}
+		table tr td{
+
+			width:33.3%;
+			height:0px;
+			border:1px solid black;
+		}
+
+	</style>
+	<script>
+		var turno=true;
+		var partida=true;
+		var caselles= new Array(9);
+		var contador=0;
+		
+		function escriure(casella){
+
+		if(partida==true || turno==true){
+			if(casella=="primer"){
+				if(caselles[0]=="X" || caselles[0]=="O"){
+				alert("casella ocupada, no trolegis :)");
+				}
+				else{
+
+				 document.getElementById("primer").innerHTML="X";
+				 caselles[0]="X";
+				 turno=false;
+				 contador++;
+				}
+			}
+			else if(casella=="segon"){
+				if(caselles[1]=="X" || caselles[1]=="O"){
+				alert("casella ocupada, no trolegis :)");
+				}
+				else{
+
+				 document.getElementById("segon").innerHTML="X";
+				 caselles[1]="X";
+				 turno=false;
+				 contador++;
+				}
+			}
+			else if(casella=="tercer"){
+				if(caselles[2]=="X" || caselles[2]=="O"){
+				alert("casella ocupada, no trolegis :)");
+				}
+				else{
+
+				 document.getElementById("tercer").innerHTML="X";
+				 caselles[2]="X";
+				 turno=false;
+				 contador++;
+				}
+			}
+			else if(casella=="quart"){
+				if(caselles[3]=="X" || caselles[3]=="O"){
+				alert("casella ocupada, no trolegis :)");
+				}
+				else{
+
+				 document.getElementById("quart").innerHTML="X";
+				 caselles[3]="X";
+				 turno=false;
+				 contador++;
+				}
+			}
+			else if(casella=="cinque"){
+				if(caselles[4]=="X" || caselles[4]=="O"){
+				alert("casella ocupada, no trolegis :)");
+				}
+				else{
+
+				 document.getElementById("cinque").innerHTML="X";
+				 caselles[4]="X";
+				 turno=false;
+				 contador++;
+				}
+			}
+			else if(casella=="sise"){
+				if(caselles[5]=="X" || caselles[5]=="O"){
+				alert("casella ocupada, no trolegis :)");
+				}
+				else{
+
+				 document.getElementById("sise").innerHTML="X";
+				 caselles[5]="X";
+				 turno=false;
+				 contador++;
+				}
+			}
+			else if(casella=="sete"){
+				if(caselles[6]=="X" || caselles[6]=="O"){
+				alert("casella ocupada, no trolegis :)");
+				}
+				else{
+
+				 document.getElementById("sete").innerHTML="X";
+				 caselles[6]="X";
+				 turno=false;
+				 contador++;
+				}
+			}
+			else if(casella=="vuite"){
+				if(caselles[7]=="X" || caselles[7]=="O"){
+				alert("casella ocupada, no trolegis :)");
+				}
+				else{
+
+				 document.getElementById("vuite").innerHTML="X";
+				 caselles[7]="X";
+				 turno=false;
+				 contador++;
+				}
+			}
+			else if(casella=="nove"){
+				if(caselles[8]=="X" || caselles[8]=="O"){
+				alert("casella ocupada, no trolegis :)");
+				}
+				else{
+
+				 document.getElementById("nove").innerHTML="X";
+				 caselles[8]="X";
+				 turno=false;
+				 contador++;
+				}
+
+			}
+
+			if ((caselles[0]=="X" && caselles[1]=="X" && caselles[2]=="X") || 
+				(caselles[3]=="X" && caselles[4]=="X" && caselles[5]=="X") ||
+				(caselles[6]=="X" && caselles[7]=="X" && caselles[8]=="X") ||
+				(caselles[0]=="X" && caselles[3]=="X" && caselles[6]=="X") ||
+				(caselles[1]=="X" && caselles[4]=="X" && caselles[7]=="X") ||
+				(caselles[2]=="X" && caselles[5]=="X" && caselles[8]=="X") ||
+				(caselles[0]=="X" && caselles[4]=="X" && caselles[8]=="X") ||
+				(caselles[2]=="X" && caselles[4]=="X" && caselles[6]=="X") 
+				){
+
+			document.getElementById("resultat").innerHTML="Has guanyat!!!";
+			var x=document.createElement("IMG");
+					x.setAttribute("src", "img/win.gif");
+    				x.setAttribute("width", "400px");
+    				x.setAttribute("height", "400px");
+    				x.setAttribute("alt", "Winner");
+    				x.setAttribute("class", "img-responsive");
+    				document.getElementById("imatge").appendChild(x);
+    				var y=document.createElement("IMG");
+					y.setAttribute("src", "img/win.gif");
+    				y.setAttribute("width", "400px");
+    				y.setAttribute("height", "400px");
+    				y.setAttribute("alt", "Winner");
+    				y.setAttribute("class", "img-responsive");
+    				document.getElementById("imatge2").appendChild(y);
+				partida=false;
+			}	
+
+			if(contador==9){
+					document.getElementById("resultat").innerHTML="Empat...";
+					var x=document.createElement("IMG");
+					x.setAttribute("src", "img/empate.gif");
+    				x.setAttribute("width", "400px");
+    				x.setAttribute("height", "400px");
+    				x.setAttribute("alt", "Empate");
+    				x.setAttribute("class", "img-responsive");
+    				document.getElementById("imatge").appendChild(x);
+    				var y=document.createElement("IMG");
+					y.setAttribute("src", "img/empate.gif");
+    				y.setAttribute("width", "400px");
+    				y.setAttribute("height", "400px");
+    				y.setAttribute("alt", "Empate");
+    				y.setAttribute("class", "img-responsive");
+    				document.getElementById("imatge2").appendChild(y);
+						partida=false;
+			}
+			}
+		}
+
+
+		function enemic(){
+			// Dins d'aquest if comprovo si el jugador o la maquina esta apunt de guanyar.
+			// Cada if de dins comprova cada casella per saber si es decisiva.
+			// Si es aixi, ocupo la casella per fer guanyar la CPU o per evitar que guanyi el jugador
+		if(partida==true){
+			if (turno==false){
+				if((caselles[2]!="X" && caselles[2]!="O")&&((caselles[0]=="O" && caselles[1]=="O")||(caselles[5]=="O" && caselles[8]=="O")
+				||(caselles[4]=="O" && caselles[6]=="O"))){
+				
+				document.getElementById("tercer").innerHTML="O";
+					caselles[2]="O";
+					turno=true;
+					contador++;
+				}
+			
+				else if((caselles[5]!="X" && caselles[5]!="O")&&((caselles[3]=="O" && caselles[4]=="O")||(caselles[2]=="O" && caselles[8]=="O"))){
+					document.getElementById("sise").innerHTML="O";
+					caselles[5]="O";
+					turno=true;
+					contador++;
+				}
+
+				else if((caselles[3]!="X" && caselles[3]!="O")&&((caselles[0]=="O" && caselles[6]=="O")||(caselles[4]=="O" && caselles[5]=="O"))){
+					document.getElementById("quart").innerHTML="O";
+					caselles[3]="O";
+					turno=true;
+					contador++;
+				}
+
+				else if((caselles[0]!="X" && caselles[0]!="O")&&((caselles[1]=="O" && caselles[2]=="O")||(caselles[3]=="O" && caselles[6]=="X")
+				||(caselles[4]=="O" && caselles[8]=="O"))){
+					document.getElementById("primer").innerHTML="O";
+					caselles[0]="O";
+					turno=true;
+					contador++;
+				}
+				else if((caselles[1]!="X" && caselles[1]!="O")&&((caselles[0]=="O" && caselles[2]=="O")||(caselles[4]=="O" && caselles[7]=="O"))){
+					document.getElementById("segon").innerHTML="O";
+					caselles[1]="O";
+					turno=true;
+					contador++;
+				}
+				else if((caselles[4]!="X" && caselles[4]!="O")&&((caselles[1]=="O" && caselles[7]=="O")||(caselles[3]=="O" && caselles[5]=="O")
+				||(caselles[0]=="O" && caselles[8]=="O")||(caselles[2]=="O" && caselles[6]=="O"))){
+					document.getElementById("cinque").innerHTML="O";
+					caselles[4]="O";
+					turno=true;
+					contador++;
+				}
+
+				else if((caselles[6]!="X" && caselles[6]!="O")&&((caselles[0]=="O" && caselles[3]=="O")||(caselles[2]=="O" && caselles[4]=="O")
+				||(caselles[7]=="O" && caselles[8]=="O"))){
+					document.getElementById("sete").innerHTML="O";
+					caselles[6]="O";
+					turno=true;
+					contador++;
+				}
+
+				else if((caselles[7]!="X" && caselles[7]!="O")&&((caselles[1]=="O" && caselles[4]=="O")||(caselles[6]=="O" && caselles[8]=="O"))){
+					document.getElementById("vuite").innerHTML="O";
+					caselles[7]="O";
+					turno=true;
+					contador++;
+				}
+				else if((caselles[8]!="X" && caselles[8]!="O")&&((caselles[2]=="O" && caselles[5]=="O")||(caselles[0]=="O" && caselles[4]=="O")
+				||(caselles[6]=="O" && caselles[7]=="O"))){
+					document.getElementById("nove").innerHTML="O";
+					caselles[8]="O";
+					turno=true;
+					contador++;
+				}
+				//Si no hi ha cap casella decisiva la maquina prioritzara ocupar el mig
+				else if(caselles[4]!="X" && caselles[4]!="O" && turno==true){
+					document.getElementById("cinque").innerHTML="O";
+					caselles[4]="O";
+					turno=true;
+					contador++;	
+				}
+			
+				else if((caselles[5]!="X" && caselles[5]!="O")&&((caselles[3]=="X" && caselles[4]=="X")||(caselles[2]=="X" && caselles[8]=="X"))){
+					document.getElementById("sise").innerHTML="O";
+					caselles[5]="O";
+					turno=true;
+					contador++;
+				}
+
+				else if((caselles[3]!="X" && caselles[3]!="O")&&((caselles[0]=="X" && caselles[6]=="X")||(caselles[4]=="X" && caselles[5]=="X"))){
+					document.getElementById("quart").innerHTML="O";
+					caselles[3]="O";
+					turno=true;
+					contador++;
+				}
+
+				else if((caselles[0]!="X" && caselles[0]!="O")&&((caselles[1]=="X" && caselles[2]=="X")||(caselles[3]=="X" && caselles[6]=="X")
+				||(caselles[4]=="X" && caselles[8]=="X"))){
+					document.getElementById("primer").innerHTML="O";
+					caselles[0]="O";
+					turno=true;
+					contador++;
+				}
+				else if((caselles[1]!="X" && caselles[1]!="O")&&((caselles[0]=="X" && caselles[2]=="X")||(caselles[4]=="X" && caselles[7]=="X"))){
+					document.getElementById("segon").innerHTML="O";
+					caselles[1]="O";
+					turno=true;
+					contador++;
+				}
+				else if((caselles[4]!="X" && caselles[4]!="O")&&((caselles[1]=="X" && caselles[7]=="X")||(caselles[3]=="X" && caselles[5]=="X")
+				||(caselles[0]=="X" && caselles[8]=="X")||(caselles[2]=="X" && caselles[6]=="X"))){
+					document.getElementById("cinque").innerHTML="O";
+					caselles[4]="O";
+					turno=true;
+					contador++;
+				}
+
+				else if((caselles[6]!="X" && caselles[6]!="O")&&((caselles[0]=="X" && caselles[3]=="X")||(caselles[2]=="X" && caselles[4]=="X")
+				||(caselles[7]=="X" && caselles[8]=="X"))){
+					document.getElementById("sete").innerHTML="O";
+					caselles[6]="O";
+					turno=true;
+					contador++;
+				}
+
+				else if((caselles[7]!="X" && caselles[7]!="O")&&((caselles[1]=="X" && caselles[4]=="X")||(caselles[6]=="X" && caselles[8]=="X"))){
+					document.getElementById("vuite").innerHTML="O";
+					caselles[7]="O";
+					turno=true;
+					contador++;
+				}
+				else if((caselles[8]!="X" && caselles[8]!="O")&&((caselles[2]=="X" && caselles[5]=="X")||(caselles[0]=="X" && caselles[4]=="X")
+				||(caselles[6]=="X" && caselles[7]=="X"))){
+					document.getElementById("nove").innerHTML="O";
+					caselles[8]="O";
+					turno=true;
+					contador++;
+				}
+				else if((caselles[2]!="X" && caselles[2]!="O")&&((caselles[0]=="X" && caselles[1]=="X")||(caselles[5]=="X" && caselles[8]=="X")
+				||(caselles[4]=="X" && caselles[6]=="X"))){
+				
+				document.getElementById("tercer").innerHTML="O";
+					caselles[2]="O";
+					turno=true;
+					contador++;
+				}	
+
+				else if((caselles[0]!="X" && caselles[0]!="O")&&(caselles[4]=="X")&&
+					(caselles[2]!="X" && caselles[2]!="O")){
+					var ale=Math.floor((Math.random() * 2) + 1);
+					if(ale==1){
+					document.getElementById("primer").innerHTML="O";
+					caselles[0]="O";
+					turno=true;
+					contador++;
+					}
+					else{
+					document.getElementById("tercer").innerHTML="O";
+					caselles[2]="O";
+					turno=true;
+					contador++;
+					}
+
+				}
+				else if((caselles[5]!="X" && caselles[5]!="O")&&(caselles[4]=="X" && caselles[8]=="X")&&((caselles[7]!="X" && caselles[7]!="O"))){
+					var ale=Math.floor((Math.random() * 2) + 1);
+					if(ale==1){
+					document.getElementById("tercer").innerHTML="O";
+					caselles[2]="O";
+					turno=true;
+					contador++;
+				}else{
+					document.getElementById("sete").innerHTML="O";
+					caselles[6]="O";
+					turno=true;
+					contador++;
+				}
+				}		
+				else{
+					do{
+						var ale=Math.floor((Math.random() * 9) + 1);
+						if (ale==1 && caselles[0]!="X" && caselles[0]!="O"  ){
+							document.getElementById("primer").innerHTML="O";
+							caselles[0]="O";
+							turno=true;
+							contador++;	
+						}
+
+						else if (ale==2 && caselles[1]!="X" && caselles[1]!="O"  ){
+							document.getElementById("segon").innerHTML="O";
+							caselles[1]="O";
+							turno=true;
+							contador++;	
+						}
+
+						else if (ale==3 && caselles[2]!="X" && caselles[2]!="O"  ){
+							document.getElementById("tercer").innerHTML="O";
+							caselles[2]="O";
+							turno=true;
+							contador++;	
+						}
+
+						else if (ale==4 && caselles[3]!="X" && caselles[3]!="O"  ){
+							document.getElementById("quart").innerHTML="O";
+							caselles[3]="O";
+							turno=true;
+							contador++;	
+						}
+
+						else if (ale==5 && caselles[4]!="X" && caselles[4]!="O"  ){
+							document.getElementById("cinque").innerHTML="O";
+							caselles[4]="O";
+							turno=true;
+							contador++;	
+						}
+
+						else if (ale==6 && caselles[5]!="X" && caselles[5]!="O"  ){
+							document.getElementById("sise").innerHTML="O";
+							caselles[5]="O";
+							turno=true;
+							contador++;	
+						}
+
+						else if (ale==7 && caselles[6]!="X" && caselles[6]!="O"  ){
+							document.getElementById("sete").innerHTML="O";
+							caselles[6]="O";
+							turno=true;
+							contador++;	
+						}
+
+						else if (ale==8 && caselles[7]!="X" && caselles[7]!="O"  ){
+							document.getElementById("vuite").innerHTML="O";
+							caselles[7]="O";
+							turno=true;
+							contador++;	
+						}
+
+						else if (ale==9 && caselles[8]!="X" && caselles[8]!="O"  ){
+							document.getElementById("nove").innerHTML="O";
+							caselles[8]="O";
+							turno=true;
+							contador++;	
+						}
+
+					}
+					while(turno==false);
+				}
+
+			}
+				if((caselles[0]=="O" && caselles[1]=="O" && caselles[2]=="O") || 
+				(caselles[3]=="O" && caselles[4]=="O" && caselles[5]=="O") ||
+				(caselles[6]=="O" && caselles[7]=="O" && caselles[8]=="O") ||
+				(caselles[0]=="O" && caselles[3]=="O" && caselles[6]=="O") ||
+				(caselles[1]=="O" && caselles[4]=="O" && caselles[7]=="O") ||
+				(caselles[2]=="O" && caselles[5]=="O" && caselles[8]=="O") ||
+				(caselles[0]=="O" && caselles[4]=="O" && caselles[8]=="O") ||
+				(caselles[2]=="O" && caselles[4]=="O" && caselles[6]=="O") 
+				){
+				document.getElementById("resultat").innerHTML="Has perdut!";
+				var x=document.createElement("IMG");
+					x.setAttribute("src", "img/loser.gif");
+    				x.setAttribute("width", "400px");
+    				x.setAttribute("height", "400px");
+    				x.setAttribute("alt", "Loser");
+    				x.setAttribute("class", "img-responsive");
+    				document.getElementById("imatge").appendChild(x);
+    				var y=document.createElement("IMG");
+					y.setAttribute("src", "img/loser.gif");
+    				y.setAttribute("width", "400px");
+    				y.setAttribute("height", "400px");
+    				y.setAttribute("alt", "Loser");
+    				y.setAttribute("class", "img-responsive");
+    				document.getElementById("imatge2").appendChild(y);
+					partida=false;
+			}
+
+		   }
+		}
+	</script>
+</head>
+<body>
+	<div class="container">
+	<h1 id="resultat">Tres en raya</h1>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-3" id="imatge">
+			</div>
+			<div class="col-sm-6">
+				<div class="table-responsive">
+				<table id="taula">		
+					<tr>
+						<td onclick="escriure('primer');enemic()"><p id="primer"></p></td>
+						<td onclick="escriure('segon');enemic()"><p id="segon"></p></td>
+						<td onclick="escriure('tercer');enemic()"><p id="tercer"></p></td>
+					</tr>
+					<tr>
+						<td onclick="escriure('quart');enemic()"><p id="quart"></p></td>
+						<td onclick="escriure('cinque');enemic()"><p id="cinque"></p></td>
+						<td onclick="escriure('sise');enemic()"><p id="sise"></p></td>
+					</tr>
+					<tr>
+						<td onclick="escriure('sete');enemic()"><p id="sete"></p></td>
+						<td onclick="escriure('vuite');enemic()"><p id="vuite"></p></td>
+						<td onclick="escriure('nove');enemic()"><p id="nove"></p></td>
+					</tr>
+				</table>
+				</div>
+			</div>
+			<div class="col-sm-3" id="imatge2"></div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-10"></div>
+		<div class="col-xs-1"><a href="index.html"><img class="img-responsive" src="img/arrow.png" alt="arrow" width="100px" height="100px"/></a></div>
+	</div>
+	<script>
+		var altura=screen.height/2;
+		document.getElementById("taula").setAttribute("height", altura);
+	</script>
+	<script src="js/jquery.js"></script>
+	<script src="js/boostrap.min.js"></script>	
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<style>
+		h1{
+			text-align:center;
+			font-size:50px;
+		}
+		p#paraula{
+			text-align:center;
+			font-size:50px;
+		}
+		div#vides{
+			width:50%;
+			margin:0px 25% 0px;
+			
+		}
+	</style>
+	<script>
+		var partida=false;
+		var encerts=0;
+		var mida;
+		var paraula;
+		var simulador="";
+		var llista = ["f a n t a s t i c ", "g a t ", "c a d i r a "];
+
+		function setCharAt(str,index,chr) {
+			if(index > str.length-1) return str;
+			return str.substr(0,index) + chr + str.substr(index+1);
+		}
+
+		function començar(){
+
+			if(partida==false){
+				var x=Math.floor((Math.random() * 3) + 0);
+
+				switch (x) {
+					case 0:
+					paraula = llista[0];
+					break;
+					case 1:
+					paraula = llista[1];
+					break;
+					case 2:
+					paraula = llista[2];
+					break;
+				}
+				mida=paraula.length/2;
+				for(i=0;i<mida;i++){
+
+					document.getElementById("paraula").innerHTML+="_ ";
+					simulador+="_ ";
+				}	
+
+			}
+			partida=true;
+		}
+		var vides=8;
+		function myFunction(){
+			var tecla = event.key;	
+			var comprobar=false;
+			for(i=0;i<paraula.length;i++){
+				if(tecla==paraula.charAt(i)){
+					paraula=paraula.replace(tecla, "0");	
+					simulador=setCharAt(simulador,i,tecla);		
+					document.getElementById("paraula").innerHTML = simulador;
+					encerts++;
+					comprobar=true;
+					if(encerts==paraula.length/2){alert("has guanyat");
+				}
+			}	
+		}
+		if(comprobar==false){
+			var list = document.getElementById("vides");
+			list.removeChild(list.childNodes[0]);
+			vides --;
+			if(vides==0){alert("Has perdut");}
+		}
+	}
+</script>
+</head>
+<body onkeydown="myFunction();">
+	<h1>Penjat <3</h1>
+	<input type="button" onclick="començar();" value="Començar">
+	
+	<div class="container-fluid">
+		<div class="row">
+			<p id="paraula"></p>
+			<div class="col-md-6 col-md-offset-3">
+				<div id="vides"><img src="img/heart.png" id="pj" alt="img/heart" width="50px" height="50px;"/><img src="img/heart.png" id="pj" alt="img/heart" width="50px" height="50px;"/><img src="img/heart.png" id="pj" alt="img/heart" width="50px" height="50px;"/><img src="img/heart.png" id="pj" alt="img/heart" width="50px" height="50px;"/><img src="img/heart.png" id="pj" alt="heart" width="50px" height="50px;"/><img src="img/heart.png" id="pj" alt="heart" width="50px" height="50px;"/><img src="img/heart.png" id="pj" alt="img/heart" width="50px" height="50px;"/><img src="img/heart.png" id="pj" alt="img/heart" width="50px" height="50px;"/></div>
+			</div>
+		</div>
+	</div>
+	
+	<div style="position:absolute; right:0px; bottom:0px; "><a href="index.html"><img src="arrow.png" alt="arrow" width="100px" height="100px"></a></div>
+	<script src="js/jquery.js"></script>
+	<script src="js/boostrap.min.js"></script>	
+</body>
+</html>

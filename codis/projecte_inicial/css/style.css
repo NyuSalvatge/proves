@@ -1,0 +1,270 @@
+@font-face {
+    font-family:lluna; 
+    src: url(../fonts/JosefinSans-Regular.ttf); 
+}
+
+@font-face {
+    font-family:gloria; 
+    src: url(../fonts/GloriaHallelujah.ttf); 
+}
+
+@font-face {
+    font-family:bree; 
+    src: url(../fonts/BreeSerif-Regular.ttf); 
+}
+
+
+
+/*Animacions dels butons laterals i ancles*/
+
+@keyframes animAncla {
+  0%   { left:200px; top:0px;}
+  100%  { left:0px; top:0px;}
+}
+
+@keyframes butDreta {
+  0%   { left:0px; top:0px;}
+  100%  { left:200px; top:0px;}
+}
+
+
+body{
+	margin:0px;
+	padding:0px;
+	font-size:15px;
+	color:black;
+	font-family:lluna;
+}
+
+#dropdownMenuButton{
+	background-color: yellow;
+}
+
+#log-form{
+	display:none;
+}
+
+#primera_seccio{
+	background-image:url("../img/bg.jpg");
+	background-repeat: no-repeat;
+	background-attachment:fixed;
+	background-position:center top;
+	background-size:cover;
+}
+
+#presentacio h1{
+	text-align: center;
+	font-family:bree; 
+	margin-top:20%;
+	font-size:100px;
+	color:black;
+	text-shadow:1px 1px 1px #F2BC79;
+}
+
+#presentacio h2{
+	font-style:italic;
+	text-align: center;
+	color:#F2BC79;
+	text-shadow:1px 1px 1px black;
+}
+
+#video-ini{
+	margin-top:10%;
+	box-shadow: -4px -4px 40px #F2BC79,
+			 	4px 4px 40px #F2BC79;
+	opacity: 0.95;
+}
+
+
+.btn-gran{
+	margin-left:40%;
+	width: 60%;
+	height:100%;
+	border-radius:5%;
+	text-shadow: 1px 2px 3px black;
+}
+
+#menu_dre{
+	height:1080px;
+}
+
+ul#redes {
+	list-style:none;
+	padding:0px;
+	width:100%;
+	background-color:rgba(246,107,94,0.2);
+	border-radius: 30%;
+}
+
+ ul#redes img{
+	margin:5% auto;
+	width:30%;
+	height:50%;
+}
+
+div.panel-body img{width:80%;
+    height:80%;
+	margin: 0 auto;}
+
+h1#titol{
+	text-align:center;
+}
+
+div.panel-heading{
+	text-align:center;
+	background-color: purple !important;
+}
+
+div.panel-footer{
+	text-align:center;
+}
+
+div#container-ff{
+	display:none;	
+}
+
+div#container-kh{
+	display:none;	
+}
+
+div#container-nier{
+	display:none;	
+}
+
+div#container-zelda{
+	display:none;	
+}
+
+div#container-league{
+	display:none;	
+}
+
+div#container-ori{
+	display:none;	
+}
+
+.complert img{
+	width:100%;
+	height:100%;
+}
+
+.btn{
+	margin-bottom: 2%;
+}
+
+.costats{
+	margin-top:5%;
+}
+
+
+#btn-jocs{
+	text-align:center;
+	margin:20% auto 50%;
+}
+
+
+/*Barra negra on hi ha la botiga, secció de merchandaising*/
+#merchan{
+	display: flex;
+	align-items: center;
+	background-color:black;
+	color:white; 
+	box-shadow: 5px -5px 56px 18px rgba(255,0,0,0.72);			
+}
+
+@media (max-width:992px) {
+  #merchan{
+    flex-direction:column;
+  }
+}
+
+#merchan h1{
+	padding:auto;
+	font-size:75px;
+}
+
+#merchan img{
+	padding:10%;
+	border-radius:20%;	
+}
+
+/*Aquesta es la segona secció apartat on hi haura l'apartat de jocs*/
+#segona_seccio{
+	background-image:url("../img/bg3.jpg");
+	background-repeat: no-repeat;
+	background-attachment:fixed;
+	background-position:center top;
+	background-size:cover;
+	box-shadow:inset 0px 48px 33px -27px rgba(128,24,128,0.7);
+
+}
+
+#segona_seccio div.panel-body, #segona_seccio div.panel {
+	background-color: rgba(2,255,255,0.1);
+}
+
+h1#play{
+	font-family:gloria;
+	font-size:120px;
+	text-align:center;
+	color:#A72FCFFF;
+	text-shadow: 2px 2px 1px black;
+	margin-bottom:5%;
+}
+
+
+
+
+
+/*Seccio dedicada a la pestanya de cookies*/
+#snackbar {
+  visibility: visible;
+  min-width:100%;
+  background-color:#1b1b1b;
+  text-align: center;
+  border-radius: 2px;
+  padding: 16px;
+  position: fixed;
+  z-index: 1;
+  bottom:0px;
+  font-size: 17px;
+}
+
+#snackbar p{
+color: pink;
+font-size: 15px;	
+}
+
+/*.row{ border: 3px solid red; }
+
+.col-md-12,.col-lg-3,.col-md-9,.col-lg-4,.col-md-2{ border: 3px solid blue; }*/
+
+#ancla{
+	position:fixed;
+	bottom:1%;
+	right:1%;
+}
+
+#ancla a{
+	text-decoration: none;
+}
+
+.glyphicon-menu-up {
+    font-size: 60px;
+    border-radius: 0px;
+    background-color: orange;
+    color: yellow;
+    opacity: 0.7;
+    border-radius: 40px;
+}
+
+#kupo{
+	display:none;
+	
+}
+
+#gargamel{
+	position:fixed;
+}
+
+

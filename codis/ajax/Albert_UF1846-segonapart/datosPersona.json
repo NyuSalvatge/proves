@@ -1,0 +1,22 @@
+[
+{"nombre": "Gabriel",
+"apellido": "Molina",
+"direccion":"Barcelona" 
+},
+
+{"nombre":"Pedro" ,
+"apellido":"Lopez" ,
+"direccion":"Girona" 
+},
+
+{"nombre": "Maria",
+"apellido":"Lopez" ,
+"direccion":"Lleida" 
+},
+
+{"nombre":"Manolo" ,
+"apellido": "Sierra",
+"direccion":"Barcelona" }
+
+
+]

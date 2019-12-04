@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<libreria>
+	
+<libro>
+<titulo>Matilda</titulo>
+<autor>Ronald</autor>
+<genero>Fantasia</genero>
+<anyo>1944</anyo>
+</libro>	
+
+<libro>
+<titulo>Pais de kas maravillas</titulo>
+<autor>Jose</autor>
+<genero>Teatro</genero>
+<anyo>1844</anyo>
+</libro>
+
+
+
+
+
+
+</libreria>

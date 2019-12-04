@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<title>Formulari</title>
+	<style>
+		select{display: block;}
+		body{
+			background-image: url("img/bg_form.jpg");
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			position: relative;
+			height: 100vh;
+		}
+	}
+</style>
+</head>
+</head>
+<body>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+			<div style="margin-top:3%;">
+				<form action="testAnimals.php" style="background-color: rgba(255,255,255,0.8); border-radius: 4%;">
+					<h3 style="text-align:center; color:#CA348DFF; text-shadow: 2px 2px 3px #D22C40FF;">Quin animal t'agrada?</h3>
+					<input onclick="gat();" type="radio" name="rad" value="gat" style="margin-left:12%;"> Gat
+					<input onclick="gos();" type="radio" name="rad" value="gos" style="margin-left:12%;"> Gos
+					<input onclick="anec();" type="radio" name="rad" value="anec" style="margin-left:12%;"> Anec 
+					<input onclick="esquirol();" type="radio" name="rad" value="esquirol" style="margin-left:12%;"> Esquirol  
+					<div id="formu" style="display:none;">
+						<h1 style="display:none;color:#D22C40FF; text-shadow: 2px 2px 3px #CA348DFF; text-align: center;" id="formGat">Com vols que sigui el gat?</h1>
+						<h1 style="display:none;color:#D22C40FF; text-shadow: 2px 2px 3px #CA348DFF; text-align: center;" id="formAnec">Com vols que sigui l'ànec?</h1>
+						<h1 style="display:none;color:#D22C40FF; text-shadow: 2px 2px 3px #CA348DFF; text-align: center;" id="formGos">Com vols que sigui el gos?</h1>
+						<h1 style="display:none;color:#D22C40FF; text-shadow: 2px 2px 3px #CA348DFF; text-align: center;" id="formEsquirol">Com vols que sigui l'esquirol?</h1>
+						<label for="nom">Nom:</label>
+						<input type="text" class="form-control" id="nom" placeholder="nom" name="nom">
+
+						<label for="edad">Edat:</label>
+						<input type="text" class="form-control" id="edat" placeholder="edat" name="edat">
+
+						<label for="color">Color:</label>
+						<select name="color">
+							<option value="taronja">Taronja</option>
+							<option value="blanc">Blanc</option>
+						</select>
+
+						<label for="amor">Amor:</label>
+						<input type="text" class="form-control" id="amor" placeholder="amor" name="amor">
+
+						<input type="submit">
+					</div>
+				</form>
+			</div>
+
+		</div>
+	</div>
+
+</body>
+
+<script>
+	
+	function gat(){
+		document.getElementById("formGat").style.display="block";
+		document.getElementById("formGos").style.display="none";
+		document.getElementById("formAnec").style.display="none";
+		document.getElementById("formu").style.display="block";
+		document.getElementById("formEsquirol").style.display="none";
+	}
+
+	function gos(){
+		document.getElementById("formGos").style.display="block";
+		document.getElementById("formGat").style.display="none";
+		document.getElementById("formAnec").style.display="none";
+		document.getElementById("formu").style.display="block";
+		document.getElementById("formEsquirol").style.display="none";
+	}
+
+	function anec(){
+		document.getElementById("formAnec").style.display="block";
+		document.getElementById("formGat").style.display="none";
+		document.getElementById("formGos").style.display="none";
+		document.getElementById("formu").style.display="block";
+		document.getElementById("formEsquirol").style.display="none";
+	}
+
+	function esquirol(){
+		document.getElementById("formEsquirol").style.display="block";
+		document.getElementById("formAnec").style.display="none";
+		document.getElementById("formGat").style.display="none";
+		document.getElementById("formGos").style.display="none";
+		document.getElementById("formu").style.display="block";
+	}
+
+</script>
+</html>

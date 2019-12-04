@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<style>
+  table,th,td {
+    border : 1px solid black;
+    border-collapse: collapse;
+  }
+  th,td {
+    padding: 5px;
+  }
+</style>
+<body>
+
+  <h1>The XMLHttpRequest Object</h1>
+
+  <button type="button" onclick="peticion('hola')">Get my CD collection</button>
+  <button type="button" onclick="peticion('adeu')">Get usuaris</button>
+  <br><br>
+  <table id="demo"></table>
+
+  <script>
+    function peticion(cosa) {
+      var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          if(cosa=="hola"){
+          miFuncion(this);
+        }else if(cosa=="adeu"){
+          miFuncion2(this);
+        }
+    }
+  };
+  if(cosa=="hola"){
+    xhttp.open("GET", "catalog.xml", true);
+    xhttp.send();
+  }
+  if(cosa=="adeu"){
+    xhttp.open("GET","ejemploTxt2.txt",true);
+    xhttp.send();
+  }
+}
+
+function peticion2() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      miFuncion2(this);
+      //procesa la respuesta
+    }
+  };
+  xhttp.open("GET","ejemploTxt2.txt",true);
+  xhttp.send();
+}
+
+
+
+function miFuncion(objetoRequest) {
+  var i;
+  var respuestaXml = objetoRequest.responseXML;
+  var tabla="<tr><th>Artist</th><th>Title</th></tr>";
+  var x = respuestaXml.getElementsByTagName("CD");
+  for (i = 0; i <x.length; i++) { 
+    tabla += "<tr><td>" +
+    x[i].getElementsByTagName("ARTIST")[0].childNodes[0].nodeValue +
+    "</td><td>" +
+    x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue +
+    "</td></tr>";
+  }
+  document.getElementById("demo").innerHTML = tabla;
+}
+
+function miFuncion2(objetoRequest) {
+
+  var usr=objetoRequest.responseText.split("\n");
+
+  for(i=0;i<usr.length;i++){
+    var estanoticia=usr[i].split(" ");
+    var miau=estanoticia[2].split(":");
+    document.getElementById("demo").innerHTML+=miau[0]+"->"+miau[1]+"<br/>";
+  }
+}
+</script>
+</body>
+</html

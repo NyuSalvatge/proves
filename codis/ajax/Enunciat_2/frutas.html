@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Frutas</title>
+	<script src="frutas.js"></script>
+	<script>
+		//cargar el documento XML
+		var xmlDoc=cargaDocXML("frutas.xml");
+		//obtener el array con todos los nodos secundarios
+		// var nodos=xmlDoc.getElementsByTagName("libro")[0].childNodes;
+		var salida="";
+		var nodos=xmlDoc.getElementsByTagName("fruta");
+		var x=nodos.length;
+		
+
+		for(j=0;j<x;j++){
+			nodos=xmlDoc.getElementsByTagName("fruta")[j].childNodes;
+			
+
+		for(i=0;i<nodos.length;i++){ //tipo element(tag)
+			if(nodos[i].nodeType==1){
+				var nombre=nodos[i].nodeName;//nombre de la etiqueta
+				if(nombre=="nombre" || nombre=="precio"){
+				valor=nodos[i].childNodes[0].nodeValue;
+				salida+="<p>"+nombre+":"+valor+"</p>";
+				}
+			}
+
+		}
+		salida+="<p>---------------------------</p>";
+	}
+		window.onload=function(){document.getElementById("miFruta").innerHTML=salida;}
+	</script>
+</head>
+<body>
+	<h1>Productos</h1>
+	<div id="miFruta"></div>
+</body>
+</html>
