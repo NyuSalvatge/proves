@@ -1,0 +1,59 @@
+body {
+	background-image:url("../img/bg.jpg");
+	background-repeat: no-repeat;
+	background-attachment:fixed;
+	background-position:center top;
+	background-size:cover;
+}
+
+.container{
+	border-radius: 8px;
+	margin-top: 2%;
+	background-color: rgba(255,255,255, 0.57);
+}
+.receptes{
+	margin-left:0.5%;
+	color:black;
+	font-size:150%;
+}
+
+.editar{
+	font-size:24px;	
+}
+
+.editar2{
+
+float:right;
+margin-top:16%;
+
+}
+
+.eliminarLlista{
+	margin-left:0.5%;
+	height:2%;
+	width:2%;
+}
+
+
+.form-editar, .form-crear{
+
+	margin-top:2%;
+}
+
+.enrrere{
+	width:3%;
+	height:3%;
+	float:right;
+}
+
+.imatgesLlista{
+	
+	margin-bottom:1%;
+	width:25%; 
+	height:25%;
+}
+
+.aliniar{
+
+	margin-left:2.5%;
+}
