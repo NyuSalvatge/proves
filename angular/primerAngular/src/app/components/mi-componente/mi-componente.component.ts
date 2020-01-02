@@ -10,7 +10,9 @@ import { Component } from '@angular/core';
 })
 
 export class MiComponente{
+    private msn: string;
     constructor(){
+        this.msn="Hola";
         console.log("Componente cargado");
     }
 }
