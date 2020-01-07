@@ -11,8 +11,13 @@ import { Component } from '@angular/core';
 
 export class MiComponente{
     private msn: string;
+    cargar:Boolean =false;
     constructor(){
         this.msn="Hola";
+        setTimeout(() => {
+            this.cargar = true;
+          }, 5000);
         console.log("Componente cargado");
     }
 }
+
